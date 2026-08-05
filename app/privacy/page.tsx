@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
       <section className="section shell" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <div className="section-heading" style={{ marginBottom: '40px' }}>
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', letterSpacing: '-2px', marginBottom: '16px' }}>FitSocial — Privacy Policy</h1>
-          <p style={{ color: 'var(--muted)', margin: '0' }}><strong>Effective Date:</strong> July 2026 <br /> <strong>Last Updated:</strong> July 2026</p>
+          <p style={{ color: 'var(--muted)', margin: '0' }}><strong>Effective Date:</strong> July 2026 <br /> <strong>Last Updated:</strong> August 2026</p>
         </div>
 
         <div style={{ maxWidth: '720px', lineHeight: '1.7', fontSize: '16px', color: 'var(--muted)' }}>
@@ -27,32 +27,47 @@ export default function PrivacyPolicy() {
 
           <h3 style={{ color: 'var(--white)', fontSize: '24px', letterSpacing: '-1px', marginTop: '40px', marginBottom: '16px' }}>2. What Data We Collect</h3>
           <p>
-            We collect <strong>only one piece of information</strong>: your <strong>email address</strong>.
+            We collect only the minimum data necessary to run FitSocial.
           </p>
+
+          <h4 style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px' }}>2.1 Waitlist Data (all users)</h4>
           <p>
-            We do not collect names, IP addresses, cookies, device information, or any other personal data at this stage. Our waitlist form is intentionally minimal.
+            Your email address. That&apos;s it — we do not collect names, IP addresses, cookies, device information, or any other personal data through our waitlist form.
+          </p>
+
+          <h4 style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px' }}>2.2 YouTube Music Integration Data (only if you connect it)</h4>
+          <p>
+            If you choose to connect your YouTube Music account — an entirely optional feature used to let you play, pause, and control music during workouts inside FitSocial — we additionally collect:
+          </p>
+          <ul style={{ paddingLeft: '20px', marginBottom: '24px' }}>
+            <li style={{ marginBottom: '8px' }}><strong>OAuth access and refresh tokens</strong>, issued by Google, which let FitSocial send playback commands (play/pause) to YouTube Music on your behalf. We never see or store your Google password.</li>
+            <li><strong>Playlist selection data</strong> — the ID and name of the playlist you choose to play, so FitSocial can resume it during your next workout.</li>
+          </ul>
+          <p>
+            We do not request or store your YouTube/Google listening history, subscriptions, contacts, or profile photo. We request only the OAuth scope needed for playback control — nothing broader.
           </p>
 
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />
 
           <h3 style={{ color: 'var(--white)', fontSize: '24px', letterSpacing: '-1px', marginTop: '40px', marginBottom: '16px' }}>3. Why We Collect It</h3>
-          <p>We use your email address for two specific purposes:</p>
+          <p>We use your data for these specific purposes:</p>
           <ol style={{ paddingLeft: '20px', marginBottom: '24px' }}>
-            <li style={{ marginBottom: '8px' }}><strong>To send you a one-time automated welcome email</strong> confirming your spot on the beta waitlist.</li>
-            <li><strong>To keep you informed</strong> about FitSocial's beta launch, product updates, and early-access invitations.</li>
+            <li style={{ marginBottom: '8px' }}>To send you a one-time automated welcome email confirming your spot on the beta waitlist.</li>
+            <li style={{ marginBottom: '8px' }}>To keep you informed about FitSocial&apos;s beta launch, product updates, and early-access invitations.</li>
+            <li><strong>If you connect YouTube Music:</strong> to start, stop, and control music playback during your workouts, and to remember your last-used playlist.</li>
           </ol>
           <p>
-            We will not use your email for unrelated marketing, and we will never sell or rent your data to third parties.
+            We will not use your data for unrelated marketing, and we will never sell or rent it to third parties.
           </p>
           <p style={{ marginTop: '24px' }}><strong>Legal Basis:</strong></p>
-          <ul style={{ paddingLeft: '20px', marginBottom: '24px' }}>
-            <li>Under <strong>POPIA</strong> (South Africa): We process your data with your <strong>explicit consent</strong>, obtained at the point of signup. Consent is voluntary, specific, and informed. You may withdraw it at any time.</li>
-          </ul>
+          <p>
+            Under <strong>POPIA</strong> (South Africa), we process your data with your <strong>explicit consent</strong>, obtained at the point of signup and, separately, at the point you choose to connect YouTube Music. Consent is voluntary, specific, and informed, and you can use FitSocial&apos;s core features without ever connecting YouTube Music. You may withdraw consent at any time.
+          </p>
 
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />
 
           <h3 style={{ color: 'var(--white)', fontSize: '24px', letterSpacing: '-1px', marginTop: '40px', marginBottom: '16px' }}>4. How We Process Your Data</h3>
-          <p>Your email passes through a short, secure pipeline:</p>
+          <p>Your data passes through a short, secure pipeline:</p>
 
           <div style={{ overflowX: 'auto', marginBottom: '24px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', border: '1px solid var(--stroke)' }}>
@@ -68,14 +83,20 @@ export default function PrivacyPolicy() {
                 <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
                   <td style={{ padding: '12px 16px' }}><strong>Collection</strong></td>
                   <td style={{ padding: '12px 16px' }}>Web3Forms</td>
-                  <td style={{ padding: '12px 16px' }}>Frontend form API & temporary storage</td>
+                  <td style={{ padding: '12px 16px' }}>Frontend form API &amp; temporary storage</td>
                   <td style={{ padding: '12px 16px' }}>Cloud-hosted</td>
                 </tr>
-                <tr>
+                <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
                   <td style={{ padding: '12px 16px' }}><strong>Delivery</strong></td>
                   <td style={{ padding: '12px 16px' }}>Resend</td>
                   <td style={{ padding: '12px 16px' }}>Transactional email API</td>
-                  <td style={{ padding: '12px 16px' }}>US-based (Secure standard contractual clauses)</td>
+                  <td style={{ padding: '12px 16px' }}>US-based (Standard Contractual Clauses)</td>
+                </tr>
+                <tr>
+                  <td style={{ padding: '12px 16px' }}><strong>Music Playback</strong></td>
+                  <td style={{ padding: '12px 16px' }}>Google (YouTube API Services)</td>
+                  <td style={{ padding: '12px 16px' }}>OAuth authentication &amp; playback control</td>
+                  <td style={{ padding: '12px 16px' }}>US-based (Google LLC)</td>
                 </tr>
               </tbody>
             </table>
@@ -91,20 +112,30 @@ export default function PrivacyPolicy() {
             Resend acts as a <strong>data operator</strong> for email delivery. They are SOC 2 compliant, encrypt data in transit (TLS 1.3+) and at rest, and provide a published Data Processing Addendum (DPA) with Standard Contractual Clauses for secure international data transfers.
           </p>
 
+          <h4 style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px' }}>Google / YouTube API Services</h4>
+          <p>
+            When you connect YouTube Music, FitSocial accesses Google&apos;s APIs to control playback on your behalf. FitSocial&apos;s use and transfer of information received from Google APIs will adhere to the{' '}
+            <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--orange)', textDecoration: 'none' }}>Google API Services User Data Policy</a>
+            , including its Limited Use requirements — meaning we use this data only to provide and improve the playback feature you&apos;ve requested, not for advertising or any unrelated purpose. Google&apos;s own handling of your account data is governed by the{' '}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--orange)', textDecoration: 'none' }}>Google Privacy Policy</a>.
+          </p>
+          <p style={{ marginTop: '16px', fontSize: '14px', fontStyle: 'italic', opacity: 0.8 }}>
+            FitSocial is not affiliated with, sponsored by, or endorsed by Google or YouTube. YouTube and Google are trademarks of Google LLC.
+          </p>
+
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />
 
           <h3 style={{ color: 'var(--white)', fontSize: '24px', letterSpacing: '-1px', marginTop: '40px', marginBottom: '16px' }}>5. Data Retention</h3>
-          <p>We retain your email address <strong>only for as long as necessary</strong> to fulfill the purposes described above.</p>
           <ul style={{ paddingLeft: '20px', marginBottom: '24px' }}>
-            <li style={{ marginBottom: '8px' }}>If you remain on the waitlist and do not unsubscribe, we retain your email until <strong>12 months after the FitSocial public launch</strong>, or until you request deletion — whichever comes first.</li>
-            <li>If you unsubscribe or request deletion, we erase your data <strong>within 30 days</strong>.</li>
+            <li style={{ marginBottom: '8px' }}><strong>Waitlist email:</strong> retained until 12 months after FitSocial&apos;s public launch, or until you request deletion — whichever comes first. If you unsubscribe or request deletion, we erase your data within 30 days.</li>
+            <li style={{ marginBottom: '8px' }}><strong>YouTube Music tokens:</strong> access is revoked immediately with Google when you disconnect YouTube Music in-app or revoke access via your Google Account permissions page. Stored tokens are deleted from our systems within 30 days of disconnection, or immediately upon account deletion.</li>
+            <li><strong>Playlist selection data:</strong> deleted on the same timeline as your YouTube Music tokens.</li>
           </ul>
-          <p>We do not maintain backups of deleted waitlist entries beyond standard system recovery windows.</p>
+          <p>We do not maintain backups of deleted data beyond standard system recovery windows.</p>
 
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />
 
           <h3 style={{ color: 'var(--white)', fontSize: '24px', letterSpacing: '-1px', marginTop: '40px', marginBottom: '16px' }}>6. Your Rights</h3>
-          <p>You have full control over your data.</p>
 
           <div style={{ overflowX: 'auto', marginBottom: '24px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', border: '1px solid var(--stroke)' }}>
@@ -124,7 +155,7 @@ export default function PrivacyPolicy() {
                   <td style={{ padding: '12px 16px' }}>Email us to correct your email address if needed.</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
-                  <td style={{ padding: '12px 16px' }}><strong>Erasure ("Right to be Forgotten")</strong></td>
+                  <td style={{ padding: '12px 16px' }}><strong>Erasure (&quot;Right to be Forgotten&quot;)</strong></td>
                   <td style={{ padding: '12px 16px' }}>Email us at any time to request complete deletion. We will confirm removal within 30 days.</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
@@ -132,12 +163,16 @@ export default function PrivacyPolicy() {
                   <td style={{ padding: '12px 16px' }}>Every email we send includes a one-click unsubscribe link. Clicking it immediately stops all future communications and flags your record for deletion.</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
+                  <td style={{ padding: '12px 16px' }}><strong>Disconnect YouTube Music</strong></td>
+                  <td style={{ padding: '12px 16px' }}>Disconnect anytime in FitSocial&apos;s app settings, or revoke FitSocial&apos;s access directly at <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--orange)', textDecoration: 'none' }}>myaccount.google.com/permissions</a>. This immediately stops playback access and starts the deletion of stored tokens and playlist data.</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
                   <td style={{ padding: '12px 16px' }}><strong>Objection</strong></td>
                   <td style={{ padding: '12px 16px' }}>You may object to processing at any time. We will cease processing immediately.</td>
                 </tr>
                 <tr>
                   <td style={{ padding: '12px 16px' }}><strong>Withdraw Consent</strong></td>
-                  <td style={{ padding: '12px 16px' }}>Unsubscribing or requesting deletion automatically withdraws your consent.</td>
+                  <td style={{ padding: '12px 16px' }}>Unsubscribing, disconnecting YouTube Music, or requesting deletion automatically withdraws the relevant consent.</td>
                 </tr>
               </tbody>
             </table>
@@ -151,15 +186,17 @@ export default function PrivacyPolicy() {
           <p>We implement reasonable technical and organizational measures to protect your data:</p>
           <ul style={{ paddingLeft: '20px', marginBottom: '24px' }}>
             <li style={{ marginBottom: '8px' }}>All data transmission occurs over <strong>HTTPS/TLS 1.3</strong>.</li>
-            <li style={{ marginBottom: '8px' }}>We use processor services that encrypt data at rest.</li>
-            <li>Access to waitlist data is restricted to authorized MiraiStack personnel only.</li>
+            <li style={{ marginBottom: '8px' }}>We use processor services that encrypt data at rest, including OAuth tokens.</li>
+            <li style={{ marginBottom: '8px' }}>YouTube Music OAuth tokens are stored encrypted and are never exposed in logs, URLs, or client-side code.</li>
+            <li style={{ marginBottom: '8px' }}>We use Google&apos;s officially supported OAuth libraries and follow Google&apos;s security guidelines for token handling.</li>
+            <li>Access to waitlist and integration data is restricted to authorized MiraiStack personnel only.</li>
           </ul>
 
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />
 
           <h3 style={{ color: 'var(--white)', fontSize: '24px', letterSpacing: '-1px', marginTop: '40px', marginBottom: '16px' }}>8. Changes to This Policy</h3>
           <p>
-            We may update this policy as FitSocial evolves. If we make material changes, we will notify you via email before they take effect. The "Last Updated" date at the top of this page always reflects the current version.
+            We may update this policy as FitSocial evolves. If we make material changes, we will notify you via email before they take effect. The &quot;Last Updated&quot; date at the top of this page always reflects the current version.
           </p>
 
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />
@@ -174,7 +211,7 @@ export default function PrivacyPolicy() {
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />
 
           <p style={{ fontSize: '14px', fontStyle: 'italic', opacity: 0.8 }}>
-            *This policy is designed to comply with the Protection of Personal Information Act (POPIA), Act 4 of 2013 (South Africa).*
+            *This policy is designed to comply with the Protection of Personal Information Act (POPIA), Act 4 of 2013 (South Africa), and the Google API Services User Data Policy.*
           </p>
 
           <div style={{ marginTop: '60px' }}>

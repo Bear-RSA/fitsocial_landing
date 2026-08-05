@@ -640,6 +640,11 @@ export default function Page() {
           </span>
         </a>
         <span>Train. Fuel. Share. Grow.</span>
+        <div className="footer-links">
+          <a href="/privacy">Privacy Policy</a>
+          <span className="footer-dot">·</span>
+          <a href="/terms">Terms & Conditions</a>
+        </div>
         <span>© 2026 FitSocial</span>
       </footer>
 

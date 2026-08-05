@@ -759,6 +759,27 @@ h2 em {
   font-size: 19px;
 }
 
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--orange);
+}
+
+.footer-dot {
+  color: var(--stroke);
+  user-select: none;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(24px);

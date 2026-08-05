@@ -120,7 +120,7 @@ export default function WaitlistForm({
         <small className="waitlist-hint">{hintText}</small>
       )}
       <small style={{ display: 'block', marginTop: '12px', fontSize: '11px', color: 'var(--muted)', opacity: 0.7 }}>
-        By joining, you agree to our <a href="/privacy" style={{ textDecoration: 'underline', color: 'var(--muted)' }}>Privacy Policy</a>
+        By joining, you agree to our <a href="/privacy" style={{ textDecoration: 'underline', color: 'var(--muted)' }}>Privacy Policy</a> and <a href="/terms" style={{ textDecoration: 'underline', color: 'var(--muted)' }}>Terms & Conditions</a>
       </small>
     </form>
   );
