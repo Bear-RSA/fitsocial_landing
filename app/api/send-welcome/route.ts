@@ -5,7 +5,7 @@ export async function POST(request: NextRequest) {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
     const body = await request.json();
-    const { email } = body;
+    const { name, email } = body;
 
     if (!email || typeof email !== "string") {
       return NextResponse.json(
@@ -21,6 +21,14 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    // Sanitize name for safe HTML injection (strip tags)
+    const safeName =
+      name && typeof name === "string"
+        ? name.trim().replace(/[<>]/g, "")
+        : "";
+
+    const greeting = safeName ? `Hi ${safeName},` : "Hi there,";
 
     const { data, error } = await resend.emails.send({
       from: "FitSocial Team <hello@mail.miraistack.co.za>",
@@ -51,7 +59,7 @@ export async function POST(request: NextRequest) {
           <!-- Body -->
           <tr>
             <td style="padding:36px 32px 28px;">
-              <p style="margin:0 0 20px;font-size:15px;line-height:1.7;color:#3f3f46;">Hi there,</p>
+              <p style="margin:0 0 20px;font-size:15px;line-height:1.7;color:#3f3f46;">${greeting}</p>
               <p style="margin:0 0 20px;font-size:15px;line-height:1.7;color:#3f3f46;">
                 Thank you for your interest in <strong style="color:#18181b;">FitSocial</strong>.
               </p>

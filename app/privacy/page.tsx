@@ -31,8 +31,17 @@ export default function PrivacyPolicy() {
           </p>
 
           <h4 style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px' }}>2.1 Waitlist Data (all users)</h4>
+          <p>When you join our waitlist, we collect:</p>
+          <ul style={{ paddingLeft: '20px', marginBottom: '16px' }}>
+            <li>Your name</li>
+            <li>Your email address</li>
+            <li>Your WhatsApp number</li>
+          </ul>
           <p>
-            Your email address. That&apos;s it — we do not collect names, IP addresses, cookies, device information, or any other personal data through our waitlist form.
+            We collect your WhatsApp number specifically so we can send you beta access invitations and product updates directly, if you request or opt in to this channel. We do not collect IP addresses, cookies, device information, or any other personal data through our waitlist form.
+          </p>
+          <p style={{ marginTop: '16px', fontSize: '14px', fontStyle: 'italic', opacity: 0.8 }}>
+            Note: Your name and WhatsApp number are direct identifiers under the Protection of Personal Information Act (POPIA), Act 4 of 2013 (South Africa), and are treated with the same care and safeguards described throughout this policy.
           </p>
 
           <h4 style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px' }}>2.2 YouTube Music Integration Data (only if you connect it)</h4>
@@ -52,8 +61,9 @@ export default function PrivacyPolicy() {
           <h3 style={{ color: 'var(--white)', fontSize: '24px', letterSpacing: '-1px', marginTop: '40px', marginBottom: '16px' }}>3. Why We Collect It</h3>
           <p>We use your data for these specific purposes:</p>
           <ol style={{ paddingLeft: '20px', marginBottom: '24px' }}>
-            <li style={{ marginBottom: '8px' }}>To send you a one-time automated welcome email confirming your spot on the beta waitlist.</li>
-            <li style={{ marginBottom: '8px' }}>To keep you informed about FitSocial&apos;s beta launch, product updates, and early-access invitations.</li>
+            <li style={{ marginBottom: '8px' }}>To send you a one-time automated welcome email (and, if you provide a WhatsApp number, a welcome message) confirming your spot on the beta waitlist.</li>
+            <li style={{ marginBottom: '8px' }}>To keep you informed about FitSocial&apos;s beta launch, product updates, and early-access invitations — via email, and via WhatsApp if you&apos;ve provided a number and opted in to that channel.</li>
+            <li style={{ marginBottom: '8px' }}>To personalize your waitlist confirmation and communications using your name.</li>
             <li><strong>If you connect YouTube Music:</strong> to start, stop, and control music playback during your workouts, and to remember your last-used playlist.</li>
           </ol>
           <p>
@@ -61,7 +71,7 @@ export default function PrivacyPolicy() {
           </p>
           <p style={{ marginTop: '24px' }}><strong>Legal Basis:</strong></p>
           <p>
-            Under <strong>POPIA</strong> (South Africa), we process your data with your <strong>explicit consent</strong>, obtained at the point of signup and, separately, at the point you choose to connect YouTube Music. Consent is voluntary, specific, and informed, and you can use FitSocial&apos;s core features without ever connecting YouTube Music. You may withdraw consent at any time.
+            Under <strong>POPIA</strong> (South Africa), we process your data with your <strong>explicit consent</strong>, obtained at the point of signup and, separately, at the point you choose to connect YouTube Music. Consent is voluntary, specific, and informed, and you can use FitSocial&apos;s core features without ever connecting YouTube Music. Providing a WhatsApp number is optional; you may join the waitlist with just your name and email if you prefer not to share it. You may withdraw consent at any time.
           </p>
 
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />
@@ -92,6 +102,12 @@ export default function PrivacyPolicy() {
                   <td style={{ padding: '12px 16px' }}>Transactional email API</td>
                   <td style={{ padding: '12px 16px' }}>US-based (Standard Contractual Clauses)</td>
                 </tr>
+                <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
+                  <td style={{ padding: '12px 16px' }}><strong>Delivery</strong></td>
+                  <td style={{ padding: '12px 16px' }}>WhatsApp Business Platform (Meta)</td>
+                  <td style={{ padding: '12px 16px' }}>Messaging API for beta/update notifications</td>
+                  <td style={{ padding: '12px 16px' }}>US-based (Meta Platforms, Inc.)</td>
+                </tr>
                 <tr>
                   <td style={{ padding: '12px 16px' }}><strong>Music Playback</strong></td>
                   <td style={{ padding: '12px 16px' }}>Google (YouTube API Services)</td>
@@ -104,12 +120,17 @@ export default function PrivacyPolicy() {
 
           <h4 style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px' }}>Web3Forms</h4>
           <p>
-            Web3Forms acts as a <strong>data operator</strong> on our behalf. They temporarily store form submissions on their secure dashboard so we can access waitlist entries. They do not use your data for their own purposes.
+            Web3Forms acts as a <strong>data operator</strong> on our behalf. They temporarily store form submissions (including name, email, and WhatsApp number) on their secure dashboard so we can access waitlist entries. They do not use your data for their own purposes.
           </p>
 
           <h4 style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px' }}>Resend</h4>
           <p>
             Resend acts as a <strong>data operator</strong> for email delivery. They are SOC 2 compliant, encrypt data in transit (TLS 1.3+) and at rest, and provide a published Data Processing Addendum (DPA) with Standard Contractual Clauses for secure international data transfers.
+          </p>
+
+          <h4 style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px' }}>WhatsApp Business Platform (Meta)</h4>
+          <p>
+            If you provide a WhatsApp number and opt in to WhatsApp updates, we use Meta&apos;s WhatsApp Business Platform solely to deliver beta access invitations and product updates. Meta acts as a <strong>data operator</strong> for this purpose, and your number is used only for the messages you&apos;ve consented to receive — not for any other purpose.
           </p>
 
           <h4 style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px' }}>Google / YouTube API Services</h4>
@@ -120,14 +141,14 @@ export default function PrivacyPolicy() {
             <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--orange)', textDecoration: 'none' }}>Google Privacy Policy</a>.
           </p>
           <p style={{ marginTop: '16px', fontSize: '14px', fontStyle: 'italic', opacity: 0.8 }}>
-            FitSocial is not affiliated with, sponsored by, or endorsed by Google or YouTube. YouTube and Google are trademarks of Google LLC.
+            FitSocial is not affiliated with, sponsored by, or endorsed by Google, YouTube, or Meta. YouTube and Google are trademarks of Google LLC. WhatsApp is a trademark of Meta Platforms, Inc.
           </p>
 
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />
 
           <h3 style={{ color: 'var(--white)', fontSize: '24px', letterSpacing: '-1px', marginTop: '40px', marginBottom: '16px' }}>5. Data Retention</h3>
           <ul style={{ paddingLeft: '20px', marginBottom: '24px' }}>
-            <li style={{ marginBottom: '8px' }}><strong>Waitlist email:</strong> retained until 12 months after FitSocial&apos;s public launch, or until you request deletion — whichever comes first. If you unsubscribe or request deletion, we erase your data within 30 days.</li>
+            <li style={{ marginBottom: '8px' }}><strong>Waitlist data (name, email, WhatsApp number):</strong> retained until 12 months after FitSocial&apos;s public launch, or until you request deletion — whichever comes first. If you unsubscribe or request deletion, we erase your data within 30 days.</li>
             <li style={{ marginBottom: '8px' }}><strong>YouTube Music tokens:</strong> access is revoked immediately with Google when you disconnect YouTube Music in-app or revoke access via your Google Account permissions page. Stored tokens are deleted from our systems within 30 days of disconnection, or immediately upon account deletion.</li>
             <li><strong>Playlist selection data:</strong> deleted on the same timeline as your YouTube Music tokens.</li>
           </ul>
@@ -152,7 +173,7 @@ export default function PrivacyPolicy() {
                 </tr>
                 <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
                   <td style={{ padding: '12px 16px' }}><strong>Rectification</strong></td>
-                  <td style={{ padding: '12px 16px' }}>Email us to correct your email address if needed.</td>
+                  <td style={{ padding: '12px 16px' }}>Email us to correct your name, email address, or WhatsApp number if needed.</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
                   <td style={{ padding: '12px 16px' }}><strong>Erasure (&quot;Right to be Forgotten&quot;)</strong></td>
@@ -160,7 +181,7 @@ export default function PrivacyPolicy() {
                 </tr>
                 <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
                   <td style={{ padding: '12px 16px' }}><strong>Unsubscribe</strong></td>
-                  <td style={{ padding: '12px 16px' }}>Every email we send includes a one-click unsubscribe link. Clicking it immediately stops all future communications and flags your record for deletion.</td>
+                  <td style={{ padding: '12px 16px' }}>Every email we send includes a one-click unsubscribe link, and you can reply &quot;STOP&quot; to any WhatsApp message to opt out. Either action immediately stops future communications on that channel and flags your record for deletion.</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
                   <td style={{ padding: '12px 16px' }}><strong>Disconnect YouTube Music</strong></td>
@@ -172,7 +193,7 @@ export default function PrivacyPolicy() {
                 </tr>
                 <tr>
                   <td style={{ padding: '12px 16px' }}><strong>Withdraw Consent</strong></td>
-                  <td style={{ padding: '12px 16px' }}>Unsubscribing, disconnecting YouTube Music, or requesting deletion automatically withdraws the relevant consent.</td>
+                  <td style={{ padding: '12px 16px' }}>Unsubscribing, opting out of WhatsApp, disconnecting YouTube Music, or requesting deletion automatically withdraws the relevant consent.</td>
                 </tr>
               </tbody>
             </table>
@@ -186,9 +207,10 @@ export default function PrivacyPolicy() {
           <p>We implement reasonable technical and organizational measures to protect your data:</p>
           <ul style={{ paddingLeft: '20px', marginBottom: '24px' }}>
             <li style={{ marginBottom: '8px' }}>All data transmission occurs over <strong>HTTPS/TLS 1.3</strong>.</li>
-            <li style={{ marginBottom: '8px' }}>We use processor services that encrypt data at rest, including OAuth tokens.</li>
+            <li style={{ marginBottom: '8px' }}>We use processor services that encrypt data at rest, including OAuth tokens and contact details such as your WhatsApp number.</li>
             <li style={{ marginBottom: '8px' }}>YouTube Music OAuth tokens are stored encrypted and are never exposed in logs, URLs, or client-side code.</li>
             <li style={{ marginBottom: '8px' }}>We use Google&apos;s officially supported OAuth libraries and follow Google&apos;s security guidelines for token handling.</li>
+            <li style={{ marginBottom: '8px' }}>WhatsApp messages are sent via Meta&apos;s official WhatsApp Business Platform, using their supported security practices.</li>
             <li>Access to waitlist and integration data is restricted to authorized MiraiStack personnel only.</li>
           </ul>
 
@@ -196,7 +218,7 @@ export default function PrivacyPolicy() {
 
           <h3 style={{ color: 'var(--white)', fontSize: '24px', letterSpacing: '-1px', marginTop: '40px', marginBottom: '16px' }}>8. Changes to This Policy</h3>
           <p>
-            We may update this policy as FitSocial evolves. If we make material changes, we will notify you via email before they take effect. The &quot;Last Updated&quot; date at the top of this page always reflects the current version.
+            We may update this policy as FitSocial evolves. If we make material changes, we will notify you via email (and WhatsApp, if applicable) before they take effect. The &quot;Last Updated&quot; date at the top of this page always reflects the current version.
           </p>
 
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />

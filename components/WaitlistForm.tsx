@@ -13,17 +13,41 @@ export default function WaitlistForm({
   hintText = "Be one of the first 1,000 founding members",
   buttonText = "Get early access"
 }: WaitlistFormProps) {
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [spotifyEmail, setSpotifyEmail] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
+  const clearError = () => {
+    if (status === "error") setStatus("idle");
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
-    if (!emailRegex.test(email.trim())) {
+
+    const trimmedName = name.trim();
+    const trimmedEmail = spotifyEmail.trim();
+    const trimmedWhatsapp = whatsapp.trim();
+
+    // Validation
+    if (!trimmedName) {
       setStatus("error");
-      setErrorMsg("Please enter a valid email address.");
+      setErrorMsg("Please enter your name.");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(trimmedEmail)) {
+      setStatus("error");
+      setErrorMsg("Please enter a valid Spotify email address.");
+      return;
+    }
+
+    const phoneRegex = /^\+?[0-9\s\-()]{7,20}$/;
+    if (!phoneRegex.test(trimmedWhatsapp)) {
+      setStatus("error");
+      setErrorMsg("Please enter a valid WhatsApp number.");
       return;
     }
 
@@ -45,7 +69,9 @@ export default function WaitlistForm({
         },
         body: JSON.stringify({
           access_key: accessKey,
-          email: email.trim(),
+          name: trimmedName,
+          email: trimmedEmail,
+          whatsapp: trimmedWhatsapp,
           subject: "New FitSocial Waitlist Signup",
         }),
       });
@@ -64,7 +90,7 @@ export default function WaitlistForm({
         await fetch("/api/send-welcome", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: email.trim() }),
+          body: JSON.stringify({ name: trimmedName, email: trimmedEmail }),
         });
       } catch (emailErr) {
         // Log but do NOT block the user — they're already on the waitlist
@@ -91,36 +117,69 @@ export default function WaitlistForm({
   }
 
   return (
-    <form className={`waitlist ${className}`.trim()} onSubmit={handleSubmit}>
-      <div className="waitlist-row">
-        <input 
-          type="email" 
-          inputMode="email" 
-          autoComplete="email" 
-          placeholder="Enter your email"
-          aria-label="Email address" 
-          required 
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-            if (status === "error") setStatus("idle");
-          }}
-        />
-        <button 
-          className="button button-primary" 
-          type="submit" 
-          disabled={status === "loading"}
-        >
-          {status === "loading" ? "Joining…" : buttonText} <span>↗</span>
-        </button>
+    <form className={`waitlist waitlist-stacked ${className}`.trim()} onSubmit={handleSubmit}>
+      <div className="waitlist-fields">
+        <div className="waitlist-field">
+          <label htmlFor="waitlist-name" className="waitlist-label">Name</label>
+          <input
+            id="waitlist-name"
+            type="text"
+            autoComplete="name"
+            placeholder="Your full name"
+            aria-label="Full name"
+            required
+            value={name}
+            onChange={(e) => { setName(e.target.value); clearError(); }}
+          />
+        </div>
+
+        <div className="waitlist-field">
+          <label htmlFor="waitlist-email" className="waitlist-label">Spotify Email</label>
+          <small className="waitlist-field-hint">Enter the email linked to your Spotify account — we'll use it to connect your music to your FitSocial experience.</small>
+          <input
+            id="waitlist-email"
+            type="email"
+            inputMode="email"
+            autoComplete="email"
+            placeholder="e.g. yourname@gmail.com"
+            aria-label="Email address linked to your Spotify account"
+            required
+            value={spotifyEmail}
+            onChange={(e) => { setSpotifyEmail(e.target.value); clearError(); }}
+          />
+        </div>
+
+        <div className="waitlist-field">
+          <label htmlFor="waitlist-whatsapp" className="waitlist-label">WhatsApp Number</label>
+          <input
+            id="waitlist-whatsapp"
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            placeholder="+27 61 234 5678"
+            aria-label="WhatsApp phone number"
+            required
+            value={whatsapp}
+            onChange={(e) => { setWhatsapp(e.target.value); clearError(); }}
+          />
+        </div>
       </div>
+
+      <button
+        className="button button-primary waitlist-submit"
+        type="submit"
+        disabled={status === "loading"}
+      >
+        {status === "loading" ? "Joining…" : buttonText} <span>↗</span>
+      </button>
+
       {status === "error" ? (
         <small className="waitlist-error">{errorMsg}</small>
       ) : (
         <small className="waitlist-hint">{hintText}</small>
       )}
       <small style={{ display: 'block', marginTop: '12px', fontSize: '11px', color: 'var(--muted)', opacity: 0.7 }}>
-        By joining, you agree to our <a href="/privacy" style={{ textDecoration: 'underline', color: 'var(--muted)' }}>Privacy Policy</a> and <a href="/terms" style={{ textDecoration: 'underline', color: 'var(--muted)' }}>Terms & Conditions</a>
+        By joining, you agree to our <a href="/privacy" style={{ textDecoration: 'underline', color: 'var(--muted)' }}>Privacy Policy</a> and <a href="/terms" style={{ textDecoration: 'underline', color: 'var(--muted)' }}>Terms &amp; Conditions</a>
       </small>
     </form>
   );

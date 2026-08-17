@@ -862,6 +862,67 @@ h2 em {
   font-size: 13px;
 }
 
+.waitlist-stacked {
+  max-width: 440px;
+}
+
+.waitlist-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.waitlist-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.waitlist-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.waitlist-field-hint {
+  font-size: 12px;
+  color: var(--muted);
+  opacity: 0.7;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.waitlist-stacked input {
+  flex: none;
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: var(--white);
+  font-size: 15px;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.waitlist-stacked input::placeholder {
+  color: #8a827d;
+}
+
+.waitlist-stacked input:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px #ff6b1a18;
+}
+
+.waitlist-submit {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
 .waitlist-success {
   padding: 28px;
   border: 1px solid var(--orange);
