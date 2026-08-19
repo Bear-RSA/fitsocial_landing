@@ -16,6 +16,7 @@ export default function WaitlistForm({
   const [name, setName] = useState("");
   const [spotifyEmail, setSpotifyEmail] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
+  const [hasAndroid, setHasAndroid] = useState<"" | "yes" | "no">("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -51,6 +52,12 @@ export default function WaitlistForm({
       return;
     }
 
+    if (hasAndroid !== "yes" && hasAndroid !== "no") {
+      setStatus("error");
+      setErrorMsg("Please let us know if you have an Android phone.");
+      return;
+    }
+
     setStatus("loading");
 
     try {
@@ -72,6 +79,7 @@ export default function WaitlistForm({
           name: trimmedName,
           email: trimmedEmail,
           whatsapp: trimmedWhatsapp,
+          android_phone: hasAndroid === "yes" ? "Yes" : "No",
           subject: "New FitSocial Waitlist Signup",
         }),
       });
@@ -162,6 +170,28 @@ export default function WaitlistForm({
             value={whatsapp}
             onChange={(e) => { setWhatsapp(e.target.value); clearError(); }}
           />
+        </div>
+
+        <div className="waitlist-field" role="radiogroup" aria-labelledby="waitlist-android-label">
+          <span className="waitlist-label" id="waitlist-android-label">Do you have an Android phone?</span>
+          <small className="waitlist-field-hint">The beta launches on Android first — this tells us whether you can test it right away.</small>
+          <div className="waitlist-toggle">
+            {([["yes", "Yes"], ["no", "No"]] as const).map(([value, label]) => (
+              <div className="waitlist-toggle-option" key={value}>
+                <input
+                  id={`waitlist-android-${value}`}
+                  type="radio"
+                  name="android_phone"
+                  value={value}
+                  checked={hasAndroid === value}
+                  onChange={() => { setHasAndroid(value); clearError(); }}
+                />
+                <label className="waitlist-toggle-label" htmlFor={`waitlist-android-${value}`}>
+                  {label}
+                </label>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

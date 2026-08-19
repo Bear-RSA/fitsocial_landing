@@ -916,6 +916,56 @@ h2 em {
   box-shadow: 0 0 0 3px #ff6b1a18;
 }
 
+.waitlist-toggle {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  width: fit-content;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+}
+
+.waitlist-toggle-option {
+  position: relative;
+}
+
+.waitlist-stacked .waitlist-toggle input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.waitlist-toggle-label {
+  display: block;
+  padding: 11px 30px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.waitlist-toggle-label:hover {
+  color: var(--white);
+}
+
+.waitlist-toggle input:checked + .waitlist-toggle-label {
+  background: var(--orange);
+  color: #050505;
+}
+
+.waitlist-toggle input:focus-visible + .waitlist-toggle-label {
+  box-shadow: 0 0 0 3px #ff6b1a40;
+}
+
 .waitlist-submit {
   width: 100%;
   margin-top: 20px;
