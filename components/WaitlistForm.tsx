@@ -8,6 +8,23 @@ interface WaitlistFormProps {
   buttonText?: string;
 }
 
+const AppleIcon = (
+  <svg className="waitlist-toggle-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+    <path d="M16.37 12.77c.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.71-3.19-1.73-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.87-.76-1.48.02-2.84.86-3.6 2.18-1.53 2.66-.39 6.6 1.1 8.76.73 1.06 1.6 2.25 2.75 2.2 1.1-.04 1.52-.71 2.85-.71 1.33 0 1.71.71 2.87.69 1.19-.02 1.94-1.08 2.66-2.14.84-1.23 1.19-2.42 1.21-2.48-.03-.01-2.32-.89-2.34-3.5zM14.2 6.3c.6-.74 1.01-1.76.9-2.78-.87.04-1.93.58-2.56 1.31-.56.65-1.05 1.69-.92 2.69.97.07 1.96-.49 2.58-1.22z" />
+  </svg>
+);
+
+const AndroidIcon = (
+  <svg className="waitlist-toggle-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+    <path d="M17.6 9.48l1.84-3.18a.4.4 0 0 0-.7-.4l-1.86 3.22a11.3 11.3 0 0 0-8.76 0L6.26 5.9a.4.4 0 1 0-.7.4L7.4 9.48A10.2 10.2 0 0 0 2 17.5h20a10.2 10.2 0 0 0-4.4-8.02zM7.05 14.63a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm9.9 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+  </svg>
+);
+
+const PLATFORMS = [
+  { value: "ios" as const, label: "iPhone", icon: AppleIcon },
+  { value: "android" as const, label: "Android", icon: AndroidIcon },
+];
+
 export default function WaitlistForm({
   className = "",
   hintText = "Be one of the first 1,000 founding members",
@@ -16,7 +33,7 @@ export default function WaitlistForm({
   const [name, setName] = useState("");
   const [spotifyEmail, setSpotifyEmail] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
-  const [hasAndroid, setHasAndroid] = useState<"" | "yes" | "no">("");
+  const [platform, setPlatform] = useState<"" | "ios" | "android">("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -52,9 +69,9 @@ export default function WaitlistForm({
       return;
     }
 
-    if (hasAndroid !== "yes" && hasAndroid !== "no") {
+    if (platform !== "ios" && platform !== "android") {
       setStatus("error");
-      setErrorMsg("Please let us know if you have an Android phone.");
+      setErrorMsg("Please pick the phone you use.");
       return;
     }
 
@@ -79,7 +96,7 @@ export default function WaitlistForm({
           name: trimmedName,
           email: trimmedEmail,
           whatsapp: trimmedWhatsapp,
-          android_phone: hasAndroid === "yes" ? "Yes" : "No",
+          platform: platform === "ios" ? "iOS" : "Android",
           subject: "New FitSocial Waitlist Signup",
         }),
       });
@@ -172,22 +189,23 @@ export default function WaitlistForm({
           />
         </div>
 
-        <div className="waitlist-field" role="radiogroup" aria-labelledby="waitlist-android-label">
-          <span className="waitlist-label" id="waitlist-android-label">Do you have an Android phone?</span>
-          <small className="waitlist-field-hint">The beta launches on Android first — this tells us whether you can test it right away.</small>
-          <div className="waitlist-toggle">
-            {([["yes", "Yes"], ["no", "No"]] as const).map(([value, label]) => (
+        <div className="waitlist-field" role="radiogroup" aria-labelledby="waitlist-platform-label">
+          <span className="waitlist-label" id="waitlist-platform-label">Which phone do you use?</span>
+          <small className="waitlist-field-hint">So your invite lands with a download link that actually works on your phone.</small>
+          <div className="waitlist-toggle waitlist-toggle-platform">
+            {PLATFORMS.map(({ value, label, icon }) => (
               <div className="waitlist-toggle-option" key={value}>
                 <input
-                  id={`waitlist-android-${value}`}
+                  id={`waitlist-platform-${value}`}
                   type="radio"
-                  name="android_phone"
+                  name="platform"
                   value={value}
-                  checked={hasAndroid === value}
-                  onChange={() => { setHasAndroid(value); clearError(); }}
+                  checked={platform === value}
+                  onChange={() => { setPlatform(value); clearError(); }}
                 />
-                <label className="waitlist-toggle-label" htmlFor={`waitlist-android-${value}`}>
-                  {label}
+                <label className="waitlist-toggle-label" htmlFor={`waitlist-platform-${value}`}>
+                  {icon}
+                  <span className="waitlist-toggle-text">{label}</span>
                 </label>
               </div>
             ))}

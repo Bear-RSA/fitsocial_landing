@@ -942,8 +942,10 @@ h2 em {
 }
 
 .waitlist-toggle-label {
-  display: block;
-  padding: 11px 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
   border-radius: 9px;
   font-size: 14px;
   font-weight: 600;
@@ -964,6 +966,32 @@ h2 em {
 
 .waitlist-toggle input:focus-visible + .waitlist-toggle-label {
   box-shadow: 0 0 0 3px #ff6b1a40;
+}
+
+.waitlist-toggle-icon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  opacity: .75;
+  transition: opacity .2s ease;
+}
+
+.waitlist-toggle-label:hover .waitlist-toggle-icon,
+.waitlist-toggle input:checked + .waitlist-toggle-label .waitlist-toggle-icon {
+  opacity: 1;
+}
+
+@media (max-width: 420px) {
+  .waitlist-toggle-platform {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .waitlist-toggle-platform .waitlist-toggle-label {
+    justify-content: center;
+    padding: 11px 12px;
+  }
 }
 
 .waitlist-submit {
