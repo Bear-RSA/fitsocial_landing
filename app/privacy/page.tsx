@@ -44,16 +44,22 @@ export default function PrivacyPolicy() {
             Note: Your name and WhatsApp number are direct identifiers under the Protection of Personal Information Act (POPIA), Act 4 of 2013 (South Africa), and are treated with the same care and safeguards described throughout this policy.
           </p>
 
-          <h4 style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px' }}>2.2 YouTube Music Integration Data (only if you connect it)</h4>
+          <h4 id="music" style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px', scrollMarginTop: '96px' }}>2.2 YouTube Music Integration Data (only if you connect it)</h4>
           <p>
-            If you choose to connect your YouTube Music account — an entirely optional feature used to let you play, pause, and control music during workouts inside FitSocial — we additionally collect:
+            If you choose to connect your YouTube Music account — an entirely optional feature that lets FitSocial display your own playlists so you can pick one for a workout — we additionally collect:
           </p>
           <ul style={{ paddingLeft: '20px', marginBottom: '24px' }}>
-            <li style={{ marginBottom: '8px' }}><strong>OAuth access and refresh tokens</strong>, issued by Google, which let FitSocial send playback commands (play/pause) to YouTube Music on your behalf. We never see or store your Google password.</li>
-            <li><strong>Playlist selection data</strong> — the ID and name of the playlist you choose to play, so FitSocial can resume it during your next workout.</li>
+            <li style={{ marginBottom: '8px' }}><strong>OAuth access and refresh tokens</strong>, issued by Google, which let FitSocial read your playlist list on your behalf. We never see or store your Google password.</li>
+            <li><strong>Playlist selection data</strong> — the ID and name of the playlist you last chose, so FitSocial can put it at the top of the list next workout.</li>
           </ul>
           <p>
-            We do not request or store your YouTube/Google listening history, subscriptions, contacts, or profile photo. We request only the OAuth scope needed for playback control — nothing broader.
+            We do not request or store your YouTube/Google listening history, subscriptions, or contacts. We request a single
+            read-only scope, <code>youtube.readonly</code>, which returns playlist names, artwork and track counts — nothing broader.
+            This access <strong>cannot</strong> create, modify, upload to or delete anything in your YouTube account.
+          </p>
+          <p>
+            YouTube Music has no public playback API, so FitSocial does not and cannot play audio from your YouTube account.
+            Choosing a playlist hands off to the YouTube Music app, which is where it plays.
           </p>
 
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />
@@ -64,7 +70,7 @@ export default function PrivacyPolicy() {
             <li style={{ marginBottom: '8px' }}>To send you a one-time automated welcome email (and, if you provide a WhatsApp number, a welcome message) confirming your spot on the beta waitlist.</li>
             <li style={{ marginBottom: '8px' }}>To keep you informed about FitSocial&apos;s beta launch, product updates, and early-access invitations — via email, and via WhatsApp if you&apos;ve provided a number and opted in to that channel.</li>
             <li style={{ marginBottom: '8px' }}>To personalize your waitlist confirmation and communications using your name.</li>
-            <li><strong>If you connect YouTube Music:</strong> to start, stop, and control music playback during your workouts, and to remember your last-used playlist.</li>
+            <li><strong>If you connect YouTube Music:</strong> to display your own playlists inside FitSocial so you can choose one for a workout, and to remember which one you last picked.</li>
           </ol>
           <p>
             We will not use your data for unrelated marketing, and we will never sell or rent it to third parties.
@@ -111,7 +117,7 @@ export default function PrivacyPolicy() {
                 <tr>
                   <td style={{ padding: '12px 16px' }}><strong>Music Playback</strong></td>
                   <td style={{ padding: '12px 16px' }}>Google (YouTube API Services)</td>
-                  <td style={{ padding: '12px 16px' }}>OAuth authentication &amp; playback control</td>
+                  <td style={{ padding: '12px 16px' }}>OAuth authentication &amp; read-only playlist access</td>
                   <td style={{ padding: '12px 16px' }}>US-based (Google LLC)</td>
                 </tr>
               </tbody>
@@ -135,9 +141,10 @@ export default function PrivacyPolicy() {
 
           <h4 style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px' }}>Google / YouTube API Services</h4>
           <p>
-            When you connect YouTube Music, FitSocial accesses Google&apos;s APIs to control playback on your behalf. FitSocial&apos;s use and transfer of information received from Google APIs will adhere to the{' '}
+            When you connect YouTube Music, FitSocial reads your playlists through the YouTube Data API on your behalf. FitSocial&apos;s use and transfer of information received from Google APIs to any other app will adhere to the{' '}
             <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--orange)', textDecoration: 'none' }}>Google API Services User Data Policy</a>
-            , including its Limited Use requirements — meaning we use this data only to provide and improve the playback feature you&apos;ve requested, not for advertising or any unrelated purpose. Google&apos;s own handling of your account data is governed by the{' '}
+            , including its Limited Use requirements — meaning we use this data only to show you your own playlists inside FitSocial, never for advertising or profiling, never to train models, and never transferred to anyone else except as required by law. It is not read by a human. Your use of YouTube through FitSocial is also governed by the{' '}
+            <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--orange)', textDecoration: 'none' }}>YouTube Terms of Service</a>, and Google&apos;s own handling of your account data is governed by the{' '}
             <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--orange)', textDecoration: 'none' }}>Google Privacy Policy</a>.
           </p>
           <p style={{ marginTop: '16px', fontSize: '14px', fontStyle: 'italic', opacity: 0.8 }}>
@@ -185,7 +192,7 @@ export default function PrivacyPolicy() {
                 </tr>
                 <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
                   <td style={{ padding: '12px 16px' }}><strong>Disconnect YouTube Music</strong></td>
-                  <td style={{ padding: '12px 16px' }}>Disconnect anytime in FitSocial&apos;s app settings, or revoke FitSocial&apos;s access directly at <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--orange)', textDecoration: 'none' }}>myaccount.google.com/permissions</a>. This immediately stops playback access and starts the deletion of stored tokens and playlist data.</td>
+                  <td style={{ padding: '12px 16px' }}>Disconnect anytime in FitSocial&apos;s app settings, or revoke FitSocial&apos;s access directly at <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--orange)', textDecoration: 'none' }}>myaccount.google.com/permissions</a>. This immediately ends FitSocial&apos;s read access and starts the deletion of stored tokens and playlist data.</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
                   <td style={{ padding: '12px 16px' }}><strong>Objection</strong></td>

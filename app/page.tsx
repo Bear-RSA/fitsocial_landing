@@ -117,6 +117,7 @@ export default function Page() {
           <div className={`nav-links ${mobileMenuOpen ? "open" : ""}`}>
             <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)}>How it works</a>
             <a href="#the-app" onClick={() => setMobileMenuOpen(false)}>The app</a>
+            <a href="#music" onClick={() => setMobileMenuOpen(false)}>Music</a>
             <a href="#plans" onClick={() => setMobileMenuOpen(false)}>Meal plans</a>
             <a href="#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
             <a className="nav-cta" href="#waitlist" onClick={() => setMobileMenuOpen(false)}>
@@ -164,14 +165,39 @@ export default function Page() {
             Your strongest routine starts <em>together.</em>
           </h1>
           <p className="hero-sub">
-            FitSocial brings training, nutrition, and community into one daily
-            rhythm — built for South Africa. Get early access before we launch.
+            FitSocial is a South African fitness app that keeps the whole
+            routine in one place — log the session, sort the week&apos;s meals on a
+            real budget, and share the work with people who actually show up.
+            Not five apps and a spreadsheet. One daily loop that makes
+            consistency feel normal.
           </p>
-          
-          <WaitlistForm 
-            className="waitlist-hero" 
-            hintText="Be one of the first 1,000 founding members" 
-          />
+
+          <ul className="hero-pillars">
+            <li>
+              <b>Train</b>
+              <span>Workouts, runs and HYROX stations, logged in seconds.</span>
+            </li>
+            <li>
+              <b>Fuel</b>
+              <span>Meals, macros and grocery plans priced in rands.</span>
+            </li>
+            <li>
+              <b>Connect</b>
+              <span>Circles that turn a solo streak into shared momentum.</span>
+            </li>
+          </ul>
+
+          <div className="hero-actions">
+            <a className="button button-primary" href="#waitlist">
+              Get early access <span>↗</span>
+            </a>
+            <a className="button button-ghost" href="#how-it-works">
+              See how it works
+            </a>
+          </div>
+          <p className="hero-actions-hint">
+            Takes 30 seconds · Be one of the first 1,000 founding members
+          </p>
 
           <ul className="trust-row">
             <li>🇿🇦 Built in South Africa</li>
@@ -356,6 +382,43 @@ export default function Page() {
             <figcaption>Keep your streak alive</figcaption>
           </figure>
         </div>
+      </section>
+
+      <section className="section shell reveal" id="music">
+        <div className="section-heading compact">
+          <p className="eyebrow">Bring your own soundtrack</p>
+          <h2>
+            Your music, <em>in the session.</em>
+          </h2>
+          <p>FitSocial connects to the music service you already pay for, so choosing a playlist never means leaving your workout.</p>
+        </div>
+        <div className="music-grid">
+          <article>
+            <span>01</span>
+            <strong>Spotify</strong>
+            <p>Connect your account to see what is playing and control play, pause and skip from inside FitSocial while you train.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <strong>YouTube Music</strong>
+            <p>
+              Sign in with your Google account and FitSocial displays your YouTube Music playlists so you can pick one for a session.
+              Access is <em>read-only</em> — FitSocial reads playlist names, artwork and track counts, and can never create, change,
+              upload to or delete anything in your YouTube account. Tapping a playlist opens it in the YouTube Music app.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <strong>Yours to revoke</strong>
+            <p>Connecting is optional and FitSocial works fully without it. Disconnect at any time in Settings, or revoke access from your Google Account permissions page.</p>
+          </article>
+        </div>
+        <p className="music-note">
+          FitSocial&apos;s use and transfer of information received from Google APIs adheres to the{" "}
+          <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+          including its Limited Use requirements. Read the <a href="/privacy#music">FitSocial Privacy Policy</a>.
+          YouTube and YouTube Music are trademarks of Google LLC.
+        </p>
       </section>
 
       <section className="section shell reveal" id="plans">
@@ -607,23 +670,58 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="download-section shell" id="download">
+      <section className="download-section shell" id="waitlist">
         <div className="download-card reveal">
           <div className="download-copy">
-            <p className="eyebrow">Made in South Africa. Made for your next level.</p>
+            <p className="eyebrow">Last step · Founding members, South Africa</p>
             <h2>
-              Ready to make consistency <em>your thing?</em>
+              You&apos;ve seen the app.<br />
+              Now <em>claim your spot.</em>
             </h2>
             <p>
-              Join the FitSocial waitlist and start building a routine that
-              travels with you — from weekday mornings to every finish line
-              after.
+              Founding members skip the public queue, keep founder pricing for
+              good, and help decide what gets built next. Thirty seconds and
+              you&apos;re in.
             </p>
           </div>
-          <div className="download-form" id="waitlist">
-            <WaitlistForm 
-              hintText="Free to join · No spam · Unsubscribe anytime" 
+
+          <div className="download-form">
+            <WaitlistForm
+              hintText="Free to join · No spam · Unsubscribe anytime"
             />
+          </div>
+
+          <div className="download-extras">
+            <ol className="cta-steps">
+              <li>
+                <span className="cta-step-num">01</span>
+                <div>
+                  <strong>Drop your details</strong>
+                  <small>Your name, the email on your Spotify, and a WhatsApp number.</small>
+                </div>
+              </li>
+              <li>
+                <span className="cta-step-num">02</span>
+                <div>
+                  <strong>We hold your spot</strong>
+                  <small>A confirmation lands in your inbox the moment you join.</small>
+                </div>
+              </li>
+              <li>
+                <span className="cta-step-num">03</span>
+                <div>
+                  <strong>You train first</strong>
+                  <small>Your invite arrives with a download link that works on your phone.</small>
+                </div>
+              </li>
+            </ol>
+
+            <ul className="cta-chips">
+              <li>Free to join</li>
+              <li>Founder pricing, locked</li>
+              <li>Android &amp; iOS</li>
+              <li>No spam, ever</li>
+            </ul>
           </div>
         </div>
       </section>
