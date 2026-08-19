@@ -30,7 +30,7 @@ export default function PrivacyPolicy() {
             We collect only the minimum data necessary to run FitSocial.
           </p>
 
-          <h4 style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px' }}>2.1 Waitlist Data (all users)</h4>
+          <h4 style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px' }}>Waitlist Data (all users)</h4>
           <p>When you join our waitlist, we collect:</p>
           <ul style={{ paddingLeft: '20px', marginBottom: '16px' }}>
             <li>Your name</li>
@@ -44,24 +44,6 @@ export default function PrivacyPolicy() {
             Note: Your name and WhatsApp number are direct identifiers under the Protection of Personal Information Act (POPIA), Act 4 of 2013 (South Africa), and are treated with the same care and safeguards described throughout this policy.
           </p>
 
-          <h4 id="music" style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px', scrollMarginTop: '96px' }}>2.2 YouTube Music Integration Data (only if you connect it)</h4>
-          <p>
-            If you choose to connect your YouTube Music account — an entirely optional feature that lets FitSocial display your own playlists so you can pick one for a workout — we additionally collect:
-          </p>
-          <ul style={{ paddingLeft: '20px', marginBottom: '24px' }}>
-            <li style={{ marginBottom: '8px' }}><strong>OAuth access and refresh tokens</strong>, issued by Google, which let FitSocial read your playlist list on your behalf. We never see or store your Google password.</li>
-            <li><strong>Playlist selection data</strong> — the ID and name of the playlist you last chose, so FitSocial can put it at the top of the list next workout.</li>
-          </ul>
-          <p>
-            We do not request or store your YouTube/Google listening history, subscriptions, or contacts. We request a single
-            read-only scope, <code>youtube.readonly</code>, which returns playlist names, artwork and track counts — nothing broader.
-            This access <strong>cannot</strong> create, modify, upload to or delete anything in your YouTube account.
-          </p>
-          <p>
-            YouTube Music has no public playback API, so FitSocial does not and cannot play audio from your YouTube account.
-            Choosing a playlist hands off to the YouTube Music app, which is where it plays.
-          </p>
-
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />
 
           <h3 style={{ color: 'var(--white)', fontSize: '24px', letterSpacing: '-1px', marginTop: '40px', marginBottom: '16px' }}>3. Why We Collect It</h3>
@@ -70,14 +52,13 @@ export default function PrivacyPolicy() {
             <li style={{ marginBottom: '8px' }}>To send you a one-time automated welcome email (and, if you provide a WhatsApp number, a welcome message) confirming your spot on the beta waitlist.</li>
             <li style={{ marginBottom: '8px' }}>To keep you informed about FitSocial&apos;s beta launch, product updates, and early-access invitations — via email, and via WhatsApp if you&apos;ve provided a number and opted in to that channel.</li>
             <li style={{ marginBottom: '8px' }}>To personalize your waitlist confirmation and communications using your name.</li>
-            <li><strong>If you connect YouTube Music:</strong> to display your own playlists inside FitSocial so you can choose one for a workout, and to remember which one you last picked.</li>
           </ol>
           <p>
             We will not use your data for unrelated marketing, and we will never sell or rent it to third parties.
           </p>
           <p style={{ marginTop: '24px' }}><strong>Legal Basis:</strong></p>
           <p>
-            Under <strong>POPIA</strong> (South Africa), we process your data with your <strong>explicit consent</strong>, obtained at the point of signup and, separately, at the point you choose to connect YouTube Music. Consent is voluntary, specific, and informed, and you can use FitSocial&apos;s core features without ever connecting YouTube Music. Providing a WhatsApp number is optional; you may join the waitlist with just your name and email if you prefer not to share it. You may withdraw consent at any time.
+            Under <strong>POPIA</strong> (South Africa), we process your data with your <strong>explicit consent</strong>, obtained at the point of signup. Consent is voluntary, specific, and informed. Providing a WhatsApp number is optional; you may join the waitlist with just your name and email if you prefer not to share it. You may withdraw consent at any time.
           </p>
 
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />
@@ -114,12 +95,6 @@ export default function PrivacyPolicy() {
                   <td style={{ padding: '12px 16px' }}>Messaging API for beta/update notifications</td>
                   <td style={{ padding: '12px 16px' }}>US-based (Meta Platforms, Inc.)</td>
                 </tr>
-                <tr>
-                  <td style={{ padding: '12px 16px' }}><strong>Music Playback</strong></td>
-                  <td style={{ padding: '12px 16px' }}>Google (YouTube API Services)</td>
-                  <td style={{ padding: '12px 16px' }}>OAuth authentication &amp; read-only playlist access</td>
-                  <td style={{ padding: '12px 16px' }}>US-based (Google LLC)</td>
-                </tr>
               </tbody>
             </table>
           </div>
@@ -139,16 +114,8 @@ export default function PrivacyPolicy() {
             If you provide a WhatsApp number and opt in to WhatsApp updates, we use Meta&apos;s WhatsApp Business Platform solely to deliver beta access invitations and product updates. Meta acts as a <strong>data operator</strong> for this purpose, and your number is used only for the messages you&apos;ve consented to receive — not for any other purpose.
           </p>
 
-          <h4 style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px' }}>Google / YouTube API Services</h4>
-          <p>
-            When you connect YouTube Music, FitSocial reads your playlists through the YouTube Data API on your behalf. FitSocial&apos;s use and transfer of information received from Google APIs to any other app will adhere to the{' '}
-            <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--orange)', textDecoration: 'none' }}>Google API Services User Data Policy</a>
-            , including its Limited Use requirements — meaning we use this data only to show you your own playlists inside FitSocial, never for advertising or profiling, never to train models, and never transferred to anyone else except as required by law. It is not read by a human. Your use of YouTube through FitSocial is also governed by the{' '}
-            <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--orange)', textDecoration: 'none' }}>YouTube Terms of Service</a>, and Google&apos;s own handling of your account data is governed by the{' '}
-            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--orange)', textDecoration: 'none' }}>Google Privacy Policy</a>.
-          </p>
           <p style={{ marginTop: '16px', fontSize: '14px', fontStyle: 'italic', opacity: 0.8 }}>
-            FitSocial is not affiliated with, sponsored by, or endorsed by Google, YouTube, or Meta. YouTube and Google are trademarks of Google LLC. WhatsApp is a trademark of Meta Platforms, Inc.
+            FitSocial is not affiliated with, sponsored by, or endorsed by Meta. WhatsApp is a trademark of Meta Platforms, Inc.
           </p>
 
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />
@@ -156,8 +123,6 @@ export default function PrivacyPolicy() {
           <h3 style={{ color: 'var(--white)', fontSize: '24px', letterSpacing: '-1px', marginTop: '40px', marginBottom: '16px' }}>5. Data Retention</h3>
           <ul style={{ paddingLeft: '20px', marginBottom: '24px' }}>
             <li style={{ marginBottom: '8px' }}><strong>Waitlist data (name, email, WhatsApp number):</strong> retained until 12 months after FitSocial&apos;s public launch, or until you request deletion — whichever comes first. If you unsubscribe or request deletion, we erase your data within 30 days.</li>
-            <li style={{ marginBottom: '8px' }}><strong>YouTube Music tokens:</strong> access is revoked immediately with Google when you disconnect YouTube Music in-app or revoke access via your Google Account permissions page. Stored tokens are deleted from our systems within 30 days of disconnection, or immediately upon account deletion.</li>
-            <li><strong>Playlist selection data:</strong> deleted on the same timeline as your YouTube Music tokens.</li>
           </ul>
           <p>We do not maintain backups of deleted data beyond standard system recovery windows.</p>
 
@@ -191,16 +156,12 @@ export default function PrivacyPolicy() {
                   <td style={{ padding: '12px 16px' }}>Every email we send includes a one-click unsubscribe link, and you can reply &quot;STOP&quot; to any WhatsApp message to opt out. Either action immediately stops future communications on that channel and flags your record for deletion.</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
-                  <td style={{ padding: '12px 16px' }}><strong>Disconnect YouTube Music</strong></td>
-                  <td style={{ padding: '12px 16px' }}>Disconnect anytime in FitSocial&apos;s app settings, or revoke FitSocial&apos;s access directly at <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--orange)', textDecoration: 'none' }}>myaccount.google.com/permissions</a>. This immediately ends FitSocial&apos;s read access and starts the deletion of stored tokens and playlist data.</td>
-                </tr>
-                <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
                   <td style={{ padding: '12px 16px' }}><strong>Objection</strong></td>
                   <td style={{ padding: '12px 16px' }}>You may object to processing at any time. We will cease processing immediately.</td>
                 </tr>
                 <tr>
                   <td style={{ padding: '12px 16px' }}><strong>Withdraw Consent</strong></td>
-                  <td style={{ padding: '12px 16px' }}>Unsubscribing, opting out of WhatsApp, disconnecting YouTube Music, or requesting deletion automatically withdraws the relevant consent.</td>
+                  <td style={{ padding: '12px 16px' }}>Unsubscribing, opting out of WhatsApp, or requesting deletion automatically withdraws the relevant consent.</td>
                 </tr>
               </tbody>
             </table>
@@ -214,11 +175,9 @@ export default function PrivacyPolicy() {
           <p>We implement reasonable technical and organizational measures to protect your data:</p>
           <ul style={{ paddingLeft: '20px', marginBottom: '24px' }}>
             <li style={{ marginBottom: '8px' }}>All data transmission occurs over <strong>HTTPS/TLS 1.3</strong>.</li>
-            <li style={{ marginBottom: '8px' }}>We use processor services that encrypt data at rest, including OAuth tokens and contact details such as your WhatsApp number.</li>
-            <li style={{ marginBottom: '8px' }}>YouTube Music OAuth tokens are stored encrypted and are never exposed in logs, URLs, or client-side code.</li>
-            <li style={{ marginBottom: '8px' }}>We use Google&apos;s officially supported OAuth libraries and follow Google&apos;s security guidelines for token handling.</li>
+            <li style={{ marginBottom: '8px' }}>We use processor services that encrypt data at rest, including contact details such as your WhatsApp number.</li>
             <li style={{ marginBottom: '8px' }}>WhatsApp messages are sent via Meta&apos;s official WhatsApp Business Platform, using their supported security practices.</li>
-            <li>Access to waitlist and integration data is restricted to authorized MiraiStack personnel only.</li>
+            <li>Access to waitlist data is restricted to authorized MiraiStack personnel only.</li>
           </ul>
 
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />
@@ -240,7 +199,7 @@ export default function PrivacyPolicy() {
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />
 
           <p style={{ fontSize: '14px', fontStyle: 'italic', opacity: 0.8 }}>
-            *This policy is designed to comply with the Protection of Personal Information Act (POPIA), Act 4 of 2013 (South Africa), and the Google API Services User Data Policy.*
+            *This policy is designed to comply with the Protection of Personal Information Act (POPIA), Act 4 of 2013 (South Africa).*
           </p>
 
           <div style={{ marginTop: '60px' }}>

@@ -117,7 +117,6 @@ export default function Page() {
           <div className={`nav-links ${mobileMenuOpen ? "open" : ""}`}>
             <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)}>How it works</a>
             <a href="#the-app" onClick={() => setMobileMenuOpen(false)}>The app</a>
-            <a href="#music" onClick={() => setMobileMenuOpen(false)}>Music</a>
             <a href="#plans" onClick={() => setMobileMenuOpen(false)}>Meal plans</a>
             <a href="#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
             <a className="nav-cta" href="#waitlist" onClick={() => setMobileMenuOpen(false)}>
@@ -382,43 +381,6 @@ export default function Page() {
             <figcaption>Keep your streak alive</figcaption>
           </figure>
         </div>
-      </section>
-
-      <section className="section shell reveal" id="music">
-        <div className="section-heading compact">
-          <p className="eyebrow">Bring your own soundtrack</p>
-          <h2>
-            Your music, <em>in the session.</em>
-          </h2>
-          <p>FitSocial connects to the music service you already pay for, so choosing a playlist never means leaving your workout.</p>
-        </div>
-        <div className="music-grid">
-          <article>
-            <span>01</span>
-            <strong>Spotify</strong>
-            <p>Connect your account to see what is playing and control play, pause and skip from inside FitSocial while you train.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <strong>YouTube Music</strong>
-            <p>
-              Sign in with your Google account and FitSocial displays your YouTube Music playlists so you can pick one for a session.
-              Access is <em>read-only</em> — FitSocial reads playlist names, artwork and track counts, and can never create, change,
-              upload to or delete anything in your YouTube account. Tapping a playlist opens it in the YouTube Music app.
-            </p>
-          </article>
-          <article>
-            <span>03</span>
-            <strong>Yours to revoke</strong>
-            <p>Connecting is optional and FitSocial works fully without it. Disconnect at any time in Settings, or revoke access from your Google Account permissions page.</p>
-          </article>
-        </div>
-        <p className="music-note">
-          FitSocial&apos;s use and transfer of information received from Google APIs adheres to the{" "}
-          <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
-          including its Limited Use requirements. Read the <a href="/privacy#music">FitSocial Privacy Policy</a>.
-          YouTube and YouTube Music are trademarks of Google LLC.
-        </p>
       </section>
 
       <section className="section shell reveal" id="plans">
