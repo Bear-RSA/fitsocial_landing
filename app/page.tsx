@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import WaitlistForm from "../components/WaitlistForm";
+import MealPlanDownload from "../components/MealPlanDownload";
 
 export default function Page() {
   const [theme, setTheme] = useState("dark");
@@ -426,9 +427,7 @@ export default function Page() {
                 <span key={i}>+ {item}</span>
               ))}
             </div>
-            <a className="button button-primary" href="#waitlist">
-              Get this in the app <span>↗</span>
-            </a>
+            <MealPlanDownload />
           </div>
         </div>
         <div className="meal-prep reveal">

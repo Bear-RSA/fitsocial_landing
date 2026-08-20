@@ -34,6 +34,7 @@ export default function WaitlistForm({
   const [spotifyEmail, setSpotifyEmail] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
   const [platform, setPlatform] = useState<"" | "ios" | "android">("");
+  const [wantsMealPlans, setWantsMealPlans] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -97,6 +98,7 @@ export default function WaitlistForm({
           email: trimmedEmail,
           whatsapp: trimmedWhatsapp,
           platform: platform === "ios" ? "iOS" : "Android",
+          meal_plans: wantsMealPlans ? "Yes — send meal plans" : "No",
           subject: "New FitSocial Waitlist Signup",
         }),
       });
@@ -122,6 +124,19 @@ export default function WaitlistForm({
         console.error("Welcome email failed (non-blocking):", emailErr);
       }
 
+      // Step 3: If they ticked the box, send the meal plan PDFs too (non-blocking)
+      if (wantsMealPlans) {
+        try {
+          await fetch("/api/send-meal-plans", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name: trimmedName, email: trimmedEmail }),
+          });
+        } catch (mealErr) {
+          console.error("Meal plan email failed (non-blocking):", mealErr);
+        }
+      }
+
       setStatus("success");
     } catch (err) {
       console.error("Waitlist submission error:", err);
@@ -135,7 +150,11 @@ export default function WaitlistForm({
       <div className={`waitlist waitlist-success ${className}`.trim()}>
         <span className="waitlist-check">✓</span>
         <strong>Thank you for your interest, you've been added to the waitlist of the Beta Testing Version of Fitsocial</strong>
-        <p>Watch your inbox — founding members get in first and help shape the app.</p>
+        <p>
+          {wantsMealPlans
+            ? "Your meal plan PDFs are on their way too — check your inbox. Founding members get in first and help shape the app."
+            : "Watch your inbox — founding members get in first and help shape the app."}
+        </p>
         <a className="text-link" href="#top">Back to top <span>↗</span></a>
       </div>
     );
@@ -210,6 +229,22 @@ export default function WaitlistForm({
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="waitlist-field waitlist-optin">
+          <input
+            id="waitlist-meal-plans"
+            type="checkbox"
+            checked={wantsMealPlans}
+            onChange={(e) => { setWantsMealPlans(e.target.checked); clearError(); }}
+          />
+          <label htmlFor="waitlist-meal-plans">
+            <span className="waitlist-optin-box" aria-hidden="true">✓</span>
+            <span className="waitlist-optin-text">
+              <strong>Click here if you&apos;re interested in free meal plans</strong>
+              <small>Real South African meals, priced in rands.</small>
+            </span>
+          </label>
         </div>
       </div>
 
