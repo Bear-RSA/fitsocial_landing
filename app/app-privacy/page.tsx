@@ -63,8 +63,12 @@ export default function AppPrivacyPolicy() {
 
           <h3 style={h3}>1. Who We Are</h3>
           <p>
-            FitSocial is built and operated from South Africa. For the purposes of the Protection of Personal Information Act (POPIA), we are the responsible party for the personal information described here. Questions, requests and complaints go to <Mail />.
+            <strong>FitSocial</strong> is built and operated by <strong>MiraiStack</strong>. For the purposes of the Protection of Personal Information Act (POPIA), MiraiStack is the responsible party for the personal information described here. Questions, requests and complaints go to <Mail />.
           </p>
+          <ul style={{ paddingLeft: '20px', marginBottom: '24px' }}>
+            <li><strong>Responsible Party:</strong> MiraiStack (PTY) LTD</li>
+            <li><strong>Contact:</strong> <Mail /></li>
+          </ul>
 
           <hr style={hr} />
 
@@ -235,7 +239,7 @@ export default function AppPrivacyPolicy() {
           <hr style={hr} />
 
           <p>
-            <strong>FitSocial</strong> · Built in South Africa<br />
+            <strong>FitSocial</strong> · Built by MiraiStack<br />
             <Mail />
           </p>
 
