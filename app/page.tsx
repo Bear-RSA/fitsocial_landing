@@ -700,7 +700,9 @@ export default function Page() {
         </a>
         <span>Train. Fuel. Share. Grow.</span>
         <div className="footer-links">
-          <a href="/privacy">Privacy Policy</a>
+          <a href="/privacy">Website Privacy Policy</a>
+          <span className="footer-dot">·</span>
+          <a href="/app-privacy">App Privacy Policy</a>
           <span className="footer-dot">·</span>
           <a href="/terms">Terms & Conditions</a>
         </div>

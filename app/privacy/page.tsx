@@ -6,11 +6,15 @@ export default function PrivacyPolicy() {
     <main>
       <section className="section shell" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <div className="section-heading" style={{ marginBottom: '40px' }}>
-          <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', letterSpacing: '-2px', marginBottom: '16px' }}>FitSocial — Privacy Policy</h1>
-          <p style={{ color: 'var(--muted)', margin: '0' }}><strong>Effective Date:</strong> July 2026 <br /> <strong>Last Updated:</strong> August 2026</p>
+          <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', letterSpacing: '-2px', marginBottom: '16px' }}>FitSocial — Website Privacy Policy</h1>
+          <p style={{ color: 'var(--muted)', margin: '0' }}><strong>Effective Date:</strong> July 2026 <br /> <strong>Last Updated:</strong> October 2026</p>
         </div>
 
         <div style={{ maxWidth: '720px', lineHeight: '1.7', fontSize: '16px', color: 'var(--muted)' }}>
+          <p>
+            This policy covers this website and the FitSocial waitlist. For the FitSocial mobile app, see our{' '}
+            <Link href="/app-privacy" style={{ color: 'var(--orange)', textDecoration: 'none' }}>App Privacy Policy</Link>.
+          </p>
 
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />
 
@@ -36,9 +40,14 @@ export default function PrivacyPolicy() {
             <li>Your name</li>
             <li>Your email address</li>
             <li>Your WhatsApp number</li>
+            <li>Your phone platform (iOS or Android)</li>
+            <li>Whether you&apos;ve opted in to receive our free meal plans</li>
           </ul>
           <p>
-            We collect your WhatsApp number specifically so we can send you beta access invitations and product updates directly, if you request or opt in to this channel. We do not collect IP addresses, cookies, device information, or any other personal data through our waitlist form.
+            We collect your WhatsApp number specifically so we can send you beta access invitations and product updates directly, if you request or opt in to this channel. We ask for your phone platform so we can send you the right beta build and plan our launch. We do not collect IP addresses, cookies, device information, or any other personal data through our waitlist form.
+          </p>
+          <p style={{ marginTop: '16px' }}>
+            Downloading a meal plan directly from our website does not require you to provide any personal information.
           </p>
           <p style={{ marginTop: '16px', fontSize: '14px', fontStyle: 'italic', opacity: 0.8 }}>
             Note: Your name and WhatsApp number are direct identifiers under the Protection of Personal Information Act (POPIA), Act 4 of 2013 (South Africa), and are treated with the same care and safeguards described throughout this policy.
@@ -51,6 +60,8 @@ export default function PrivacyPolicy() {
           <ol style={{ paddingLeft: '20px', marginBottom: '24px' }}>
             <li style={{ marginBottom: '8px' }}>To send you a one-time automated welcome email (and, if you provide a WhatsApp number, a welcome message) confirming your spot on the beta waitlist.</li>
             <li style={{ marginBottom: '8px' }}>To keep you informed about FitSocial&apos;s beta launch, product updates, and early-access invitations — via email, and via WhatsApp if you&apos;ve provided a number and opted in to that channel.</li>
+            <li style={{ marginBottom: '8px' }}>To send you the right beta build for your device, based on the phone platform you select.</li>
+            <li style={{ marginBottom: '8px' }}>If you tick the meal plan opt-in, to send you a one-time email containing download links to our free meal plan PDFs.</li>
             <li style={{ marginBottom: '8px' }}>To personalize your waitlist confirmation and communications using your name.</li>
           </ol>
           <p>
@@ -58,7 +69,7 @@ export default function PrivacyPolicy() {
           </p>
           <p style={{ marginTop: '24px' }}><strong>Legal Basis:</strong></p>
           <p>
-            Under <strong>POPIA</strong> (South Africa), we process your data with your <strong>explicit consent</strong>, obtained at the point of signup. Consent is voluntary, specific, and informed. Providing a WhatsApp number is optional; you may join the waitlist with just your name and email if you prefer not to share it. You may withdraw consent at any time.
+            Under <strong>POPIA</strong> (South Africa), we process your data with your <strong>explicit consent</strong>, obtained at the point of signup. Consent is voluntary, specific, and informed. Providing a WhatsApp number is optional; you may join the waitlist with just your name and email if you prefer not to share it. The meal plan opt-in is unticked by default and entirely optional — joining the waitlist does not require it. You may withdraw consent at any time.
           </p>
 
           <hr style={{ border: 'none', borderTop: '1px solid var(--stroke)', margin: '40px 0' }} />
@@ -80,13 +91,13 @@ export default function PrivacyPolicy() {
                 <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
                   <td style={{ padding: '12px 16px' }}><strong>Collection</strong></td>
                   <td style={{ padding: '12px 16px' }}>Web3Forms</td>
-                  <td style={{ padding: '12px 16px' }}>Frontend form API &amp; temporary storage</td>
+                  <td style={{ padding: '12px 16px' }}>Frontend form API &amp; temporary storage (waitlist details, platform, meal plan opt-in)</td>
                   <td style={{ padding: '12px 16px' }}>Cloud-hosted</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
                   <td style={{ padding: '12px 16px' }}><strong>Delivery</strong></td>
                   <td style={{ padding: '12px 16px' }}>Resend</td>
-                  <td style={{ padding: '12px 16px' }}>Transactional email API</td>
+                  <td style={{ padding: '12px 16px' }}>Transactional email API (welcome email, meal plan email)</td>
                   <td style={{ padding: '12px 16px' }}>US-based (Standard Contractual Clauses)</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
@@ -101,12 +112,12 @@ export default function PrivacyPolicy() {
 
           <h4 style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px' }}>Web3Forms</h4>
           <p>
-            Web3Forms acts as a <strong>data operator</strong> on our behalf. They temporarily store form submissions (including name, email, and WhatsApp number) on their secure dashboard so we can access waitlist entries. They do not use your data for their own purposes.
+            Web3Forms acts as a <strong>data operator</strong> on our behalf. They temporarily store form submissions (including name, email, WhatsApp number, phone platform, and meal plan opt-in) on their secure dashboard so we can access waitlist entries. They do not use your data for their own purposes.
           </p>
 
           <h4 style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px' }}>Resend</h4>
           <p>
-            Resend acts as a <strong>data operator</strong> for email delivery. They are SOC 2 compliant, encrypt data in transit (TLS 1.3+) and at rest, and provide a published Data Processing Addendum (DPA) with Standard Contractual Clauses for secure international data transfers.
+            Resend acts as a <strong>data operator</strong> for email delivery, including the welcome email and, if you opt in, the meal plan email. Only your name and email address are shared with Resend. They are SOC 2 compliant, encrypt data in transit (TLS 1.3+) and at rest, and provide a published Data Processing Addendum (DPA) with Standard Contractual Clauses for secure international data transfers.
           </p>
 
           <h4 style={{ color: 'var(--white)', fontSize: '18px', marginTop: '32px', marginBottom: '12px' }}>WhatsApp Business Platform (Meta)</h4>
@@ -122,7 +133,7 @@ export default function PrivacyPolicy() {
 
           <h3 style={{ color: 'var(--white)', fontSize: '24px', letterSpacing: '-1px', marginTop: '40px', marginBottom: '16px' }}>5. Data Retention</h3>
           <ul style={{ paddingLeft: '20px', marginBottom: '24px' }}>
-            <li style={{ marginBottom: '8px' }}><strong>Waitlist data (name, email, WhatsApp number):</strong> retained until 12 months after FitSocial&apos;s public launch, or until you request deletion — whichever comes first. If you unsubscribe or request deletion, we erase your data within 30 days.</li>
+            <li style={{ marginBottom: '8px' }}><strong>Waitlist data (name, email, WhatsApp number, phone platform, meal plan opt-in):</strong> retained until 12 months after FitSocial&apos;s public launch, or until you request deletion — whichever comes first. If you unsubscribe or request deletion, we erase your data within 30 days.</li>
           </ul>
           <p>We do not maintain backups of deleted data beyond standard system recovery windows.</p>
 
@@ -145,7 +156,7 @@ export default function PrivacyPolicy() {
                 </tr>
                 <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
                   <td style={{ padding: '12px 16px' }}><strong>Rectification</strong></td>
-                  <td style={{ padding: '12px 16px' }}>Email us to correct your name, email address, or WhatsApp number if needed.</td>
+                  <td style={{ padding: '12px 16px' }}>Email us to correct your name, email address, WhatsApp number, or phone platform if needed.</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid var(--stroke)' }}>
                   <td style={{ padding: '12px 16px' }}><strong>Erasure (&quot;Right to be Forgotten&quot;)</strong></td>
